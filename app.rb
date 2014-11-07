@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
-require 'slim'
-require 'pony'
+require 'redis'
+
 
 configure do
   set :public_folder, 'public'
