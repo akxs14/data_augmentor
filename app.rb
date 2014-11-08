@@ -4,7 +4,8 @@ require 'redis'
 
 
 configure do
-  set :public_folder, 'public'
+  redis_conf = { :host => 'localhost', :port => 6379, :password => 'pipa' }
+  @@redis = Redis.new redis_conf
 end
 
 post '/:customer_id/users' do
