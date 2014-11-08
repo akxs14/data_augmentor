@@ -28,7 +28,7 @@ post '/customer_id/:customer_id/product_id/:product_id/name/:name/price/:price' 
   content_type :json
 
   hash_postfix = params[:product_id][0..3]
-  hash = "products:#{hash_postfix}"
+  hash = "products:#{params[:customer_id]}:#{hash_postfix}"
   
   @@redis.hset( hash, 
                 params[:product_id], 
